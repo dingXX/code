@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>形状</title>
+    <style>
+        body{
+            background-color: #e5e5e5;
+        }
+        div{
+            margin:30px;
+            width: 50%;
+            height: 100px;
+        }
+        /*椭圆*/
+        .demo01{
+            width: 200px;
+            height: 160px;
+            border-radius: 50%;
+            border:10px solid #123451;
+            /*border-radius: 100px/80px;*/
+            background-color: #19a999;
+        }
+        /*半椭圆*/
+        .demo02{
+            width: 200px;
+            height: 160px;
+            border-radius: 50%/100% 100% 0 0 ;
+            background-color: #19a999;
+        }
+        /*平行四边形*/
+        .demo03{
+            position: relative;
+        }
+        .demo03::before{
+            /*width: 200px;
+            height: 160px;*/
+            content: '';
+            position:absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #58a;
+            transform: skew(45deg);
+            z-index: -1;
+        }
+        /*菱形*/
+        .demo04{
+            width: 200px;
+            height: 200px;
+            transform: rotate(45deg);
+            overflow: hidden;
+        }
+        .demo04 img{
+            /*max-width: 100%;*/
+            max-height: 100%;
+            transform: rotate(-45deg) scale(1.42);
+            /*transform-origin: 50%,50%;*/
+        }
+        /*单个切角*/
+        .demo05{
+            width: 100px;
+            height: 200px;
+            background-color: #58a;
+            background: linear-gradient(-45deg,transparent 15px,#58a 0);
+        }
+        /*四角切*/
+        .demo05-01{
+            width: 200px;
+            height: 100px;
+            background-color: #58a;
+            background: 
+                linear-gradient(135deg,transparent 15px,#58a 0) top left,
+                linear-gradient(-135deg,transparent 15px,#58a 0) top right,
+                linear-gradient(-45deg,transparent 15px,#58a 0) bottom right,
+                linear-gradient(45deg,transparent 15px,#58a 0) bottom left;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+        }
+        /*内切圆角*/
+        .demo05-02{
+            width: 200px;
+            height: 100px;
+            background-color: #58a;
+            background: 
+                radial-gradient(circle at top left,transparent 15px,#58a 0) top left,
+                radial-gradient(circle at top right,transparent 15px,#58a 0) top right,
+                radial-gradient(circle at bottom right,transparent 15px,#58a 0) bottom right,
+                radial-gradient(circle at bottom left,transparent 15px,#58a 0) bottom left;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+        }
+        /*梯形*/
+        .demo06{
+            width: 100px;
+            height: 50px;
+            position: relative;
+        }
+        .demo06::before{
+            z-index: -1;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: #58a;
+            transform: perspective(0.5em) rotateX(5deg);
+        }
+        /*饼图*/
+        .demo07{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #58a;
+            background-image: linear-gradient(to right,transparent 50%,#655 0);
+        }
+        @keyframes spin{
+            to {transform: rotate(.5turn);}
+        }
+        @keyframes bg{
+            50% {
+                background: #655;
+            }
+        }
+        .demo07::before{
+            content: '';
+            display: block;
+            margin-left: 50%;
+            height: 100%;
+            width: 50%;
+            border-radius:0 100% 100% 0 / 50%;
+            transform-origin: left;
+            background-color: inherit;
+            animation: spin 50s linear infinite,
+                       bg 100s step-end infinite;
+            animation-play-state: paused;
+            animation-delay: -20s;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo01"></div>
+    <div class="demo02"></div>
+    <div class="demo03">平行四边形</div>
+    <div class="demo04"><img src="./img/01.jpg" alt=""></div>
+    <div class="demo05"></div>
+    <div class="demo05-01"></div>
+    <div class="demo05-02"></div>
+    <div class="demo06">梯形</div>
+    <div class="demo07"></div>
+</body>
+</html>

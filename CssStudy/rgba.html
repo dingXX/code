@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>半透明边框</title>
+    <style>
+        body{
+            background:#e5e5e5;
+        }
+        div{
+            margin:30px;
+            width: 50%;
+            height: 100px;
+        }
+        .demo01{
+            background: red;
+            border:10px solid rgba(255,255,255,0.5);
+            background-clip: padding-box; /*背景裁剪 border-box|padding-box|content-box*/
+        }
+        .demo02{
+            background: red;
+            border:10px solid gray;
+            box-shadow: 0 0 0 10px #655;    /*offset-x offset-y blur-radius spread-radius color*/
+        }
+        .demo03{
+            background: red;
+            border:10px solid gray;
+            outline: #00ff00 solid 10px;    /*outline: color style width*/
+        }
+        .demo04{
+            background: linear-gradient(#fb3 50%,#58a 50%);
+            background-size: 100% 30px;
+        }
+        .demo05{
+            background: repeating-linear-gradient(red,red 5px, white 5px, white 10px);
+        }
+        .demo06{
+           /* background:linear-gradient(45deg,#fb3 25%,#58a 0,#58a 50%,#fb3 0, #fb3 75%,#58a 0);
+            background-size: 30px 30px;*/
+            background-color: #58a;
+            background-image: repeating-linear-gradient(60deg,rgba(255,255,255,0.1),
+                                                    rgba(255,255,255,0.1) 10px,
+                                                    transparent 10px, 
+                                                    transparent 20px);
+        }
+        .demo07{
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 边框颜色随父元素变化 -->
+    <div class="demo01">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊A啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+    <!-- 多重边框 -->
+    <div class="demo02">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊A啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+
+    <div class="demo03">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊A啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+    
+    <!-- 条纹背景 -->
+    <div class="demo04"></div>
+    <div class="demo05"></div>
+    <div class="demo06"></div>
+    <div class="demo07"></div>
+</body>
+</html>

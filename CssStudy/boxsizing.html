@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>box-sizing</title>
+</head>
+<style>
+    html ,body{
+        height: 100%;
+        margin: 0;
+    }
+    .wrapper{
+        min-height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        border-bottom: 101px;
+    }
+    .div1{
+        height: 500px;
+        background: red;
+    }
+    .div2{
+        height: 600px;
+        background: pink;
+    }
+    .footer{
+        height: 101px;
+        width: 100%;
+        background: yellow;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <footer class="footer">footer</footer>
+    </div>
+</body>
+</html>

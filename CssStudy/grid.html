@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid</title>
+</head>
+<body>
+    <style>
+        .wrapper { 
+          display: grid; 
+          grid-template-columns: 100px 100px 100px;  /*一行中每个格子的宽度*/
+          grid-gap: 10px; 
+          background-color: #fff; 
+          color: #444; 
+        } 
+
+        .box { 
+          background-color: #444; 
+          color: #fff; 
+          border-radius: 5px; 
+          padding: 20px; 
+          font-size: 150%; 
+        }
+        @media screen and (max-device-width: 400px){
+            background-color:#111;
+        }
+    </style>
+    <div class="wrapper">
+      <div class="box a">a</div>
+      <div class="box b">b</div>
+      <div class="box c">c</div>
+      <div class="box d">d</div>
+      <div class="box e">e</div>
+      <div class="box f">f</div>
+    </div>
+</body>
+</html>
