@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雪碧图</title>
+    <style>
+        .contain{
+            border:1px solid #e5e5e5;
+            margin-left: 200px;
+            background-image: url(./img/icon.png);
+            background-repeat: no-repeat;
+            background-size: 200%;  /*雪碧图总大小 / icon在雪碧图中的大小*/
+            background-position: 0 18.4%; /*图片定位position / (图片大小-雪碧图大小)*/
+        }
+        /*positionX = (容器的宽度-图片的宽度) * percentX;
+        positionY = (容器的高度-图片的高度) * percentY;*/
+        .contain02{
+            width: 114px;
+            height: 132px;
+        }
+        .contain01{
+            width: 95px;
+            height: 112px;
+        }
+
+        .wrapper{
+            border:1px solid #e5e5e5;
+            background-image: url(./img/icon.png);
+            background-repeat: no-repeat;
+            background-size: 294.66%;
+            background-position: 0 58.6%;
+        }
+        .wrapper01{
+            width: 75px;
+            height: 57px;
+        }
+     /*   .wrapper02{
+            width: 223px;
+            height: 166px;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="contain contain02"></div>
+    <div class="contain contain01"></div>
+
+    <div class="wrapper wrapper01"></div>
+    <div class="wrapper wrapper02"></div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid</title>
+</head>
+<body>
+    <style>
+        .grid {
+          display: grid;
+          width: 100%;
+          color: #fff;
+        }
+        .grid01{
+            grid-template-columns: 50px 1fr;
+        }
+        .grid02{
+            grid-template-columns: minmax(100px, 0.5fr);
+        }
+        .grid03{
+            grid-template-columns: fit-content(40%);
+        }
+        .grid04{
+            grid-template-columns: repeat(3, 200px);
+        }
+        .grid05{
+            grid-template-columns: 200px repeat(auto-fill, 100px) 300px;
+        }
+        .grid06{
+            grid-template-columns: minmax(100px, max-content) repeat(auto-fill, 200px) 20%;
+        }
+        .areaA {
+          background-color: #091278;
+        }
+
+        .areaB {
+          background-color: gray;
+        }
+        .areaC {
+          background-color: #892312;
+        }
+        .areaD {
+          background-color: #12ab90;
+        }
+    </style>
+    <div>
+        <p>grid-template-columns: 50px 1fr;(2列，第一列50px,第二列剩余的)</p>
+        <div class="grid grid01">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p>grid-template-columns: minmax(100px, 0.5fr);(1列,[100px,0.5fr])</p>
+        <div class="grid grid02">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p>grid-template-columns: fit-content(40%);???</p>
+        <div class="grid grid03">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p>grid-template-columns: repeat(3, 200px); (3列都是200px)</p>
+        <div class="grid grid04">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p>grid-template-columns: 200px repeat(auto-fill, 100px) 300px;（第一个200px,中间n个100px,最后一个300px[最后一个一定要贴边才300px]）</p>
+        <div class="grid grid05">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+          <div class="areaD">D</div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p>grid-template-columns: minmax(100px, max-content) repeat(auto-fill, 200px) 20%</p>
+        <div class="grid grid06">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+          <div class="areaD">D</div>
+        </div>
+    </div>
+
+    <style>
+        #page {
+          display: grid;
+          width: 100%;
+          height: 250px;
+          grid-template-areas: "head head "
+                               "nav  main"
+                               "nav  foot ";
+          grid-template-rows: 50px 1fr 30px;
+          grid-template-columns: 150px 1fr;
+        }
+
+        #page > .header {
+          grid-area: head;
+          background-color: #8ca0ff;
+        }
+
+        #page > nav {
+          grid-area: nav;
+          background-color: #ffa08c;
+        }
+
+        #page > main {
+          grid-area: main;
+          background-color: #ffff64;
+        }
+
+        #page > footer {
+          grid-area: foot;
+          background-color: #8cffa0;
+        }
+    </style>
+    <div>
+        <div>grid-template-areas: "head head" "nav  main" "nav  foot";</div>
+        <section id="page">
+          <div class="header">Header</div>
+          <nav>Navigation</nav>
+          <main>Main area</main>
+          <footer>Footer</footer>
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+          <div class="areaD">D</div>
+        </section>
+    </div>
+
+    <style>
+        .grid07{
+            grid-template-areas: "head head" "nav  main" "nav  foot";
+            grid-gap: 10px;
+            grid-auto-rows: 100px;
+        }
+    </style>
+    <br>
+    <div>
+        <p>grid-template-areas: "a a";grid-auto-rows: 100px;</p>
+        <div class="grid grid07">
+          <div class="areaA">A</div>
+          <div class="areaB">B</div>
+          <div class="areaC">C</div>
+          <div class="areaD">D</div>
+        </div>
+    </div>
+</body>
+</html>
